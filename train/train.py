@@ -1,6 +1,9 @@
 import yaml
 from init import init
-config = yaml.safe_load(open("cfgs\config.yml"))
+
+# Change Config file location if needed
+config = yaml.safe_load(open("./train/cfgs/config.yml"))
+
 
 agents,env = init(config)
 
@@ -44,6 +47,6 @@ for e in range(episodes):
 
     # Replay to train the agents
     if len(agent1.memory) > batch_size:
-        agent1.replay(batch_size)
+        agent1.replay(batch_size, e)
     if len(agent2.memory) > batch_size:
-        agent2.replay(batch_size)
+        agent2.replay(batch_size, e)
