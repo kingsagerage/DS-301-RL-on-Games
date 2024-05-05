@@ -1,0 +1,16 @@
+env: 3D
+agent:
+  type: DQN
+  number: 2
+  state_size: 2
+  action_size: 13
+  memLength: 2000
+  gamma: 0.95
+  epsilon: 3.0
+  minimalE: 0.01
+  eDecay: 0.999
+
+batch_size: 32
+episodes: 10000
+num_steps: 500
+
