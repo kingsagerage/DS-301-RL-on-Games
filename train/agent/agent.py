@@ -40,15 +40,14 @@ class DQN(nn.Module):
 
 # Define the DQN agent
 class DQNAgent:
-    def __init__(self, state_size, action_size, memLength = 2000, gamma = 0.95,
-                 epsilon =3.0, minimalE = 0.01, eDecay = 0.999):
+    def __init__(self, state_size, action_size, gamma = 0.95,epsilon = 3.0,epsilon_min=0.01):
         self.state_size = state_size
         self.action_size = action_size
-        self.memory = deque(maxlen=memLength)
-        self.gamma = gamma    # discount rate
+        self.memory = deque(maxlen=2000)
+        self.gamma = gamma   # discount rate
         self.epsilon = epsilon  # exploration rate
-        self.epsilon_min = minimalE
-        self.epsilon_decay = eDecay
+        self.epsilon_min = epsilon_min
+        self.epsilon_decay = 0.999
         self.model = DQN(state_size, action_size)
         self.optimizer = optim.Adam(self.model.parameters(), lr=0.1)
         self.loss_fn = nn.MSELoss()
