@@ -2,7 +2,7 @@ import yaml
 from init import init
 
 # Change Config file location if needed
-config = yaml.safe_load(open("./train/cfgs/config.yml"))
+config = yaml.safe_load(open("cfgs/config.yml"))
 
 
 agents,env = init(config)
