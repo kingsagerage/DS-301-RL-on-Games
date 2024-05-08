@@ -219,10 +219,25 @@ class CustomEnv3DWithraytracing(gym.Env):
         dist = math.sqrt(z_diff**2 + y_diff**2 + x_diff**2)
         return dist
     def _get_observation(self, agent_pos, enemy_pos):
-        direction = self.get_direction(agent_pos, enemy_pos)
-        distance = np.linalg.norm(np.array(enemy_pos) - np.array(agent_pos))
-        return direction, distance
+        observation = {}
+        for degree in range(360):
+            direction = degree % 90
+            distance = self._ray_tracing_distance(agent_pos, degree)
+            observation[degree] = (direction, distance)
+        return observation
+    def _ray_tracing_distance(self, agent_pos, direction):
+        ray_direction = np.array([math.cos(math.radians(direction)), math.sin(math.radians(direction)), 0])
+        ray_position = np.array(agent_pos)
 
+        while 0 <= ray_position[0] < self.grid_size and 0 <= ray_position[1] < self.grid_size and 0 <= ray_position[2] < self.grid_size:
+            if self.grid[int(ray_position[0]), int(ray_position[1]), int(ray_position[2])] == 1:
+                # Hit an obstacle, return distance
+                return np.linalg.norm(agent_pos - ray_position)
+            # Move along the ray direction
+            ray_position += ray_direction
+
+        # If ray tracing reaches the grid boundary, return a large distance
+        return 1000
     def reset(self):
         self.agent1_pos = [768, 512, 512] 
         self.agent2_pos = [256, 512, 512]

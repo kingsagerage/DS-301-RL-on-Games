@@ -31,6 +31,10 @@ for e in range(episodes):
         agent1.remember(state1, action1, reward1, next_state1, done)
         agent2.remember(state2, action2, reward2, next_state2, done)
 
+        # Replay memories
+        agent1.replay(batch_size)
+        agent2.replay(batch_size)
+
         # Update the current state
         state1 = next_state1
         state2 = next_state2
