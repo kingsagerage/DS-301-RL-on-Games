@@ -67,7 +67,7 @@ class DQNAgent():
         q_values = self.model(state)
         return q_values.argmax().item()
 
-    def replay(self, batch_size, t):
+    def replay(self, batch_size, t, update_e = False):
         if len(self.memory) < batch_size:
             return
         minibatch = random.sample(self.memory, batch_size)
@@ -85,7 +85,7 @@ class DQNAgent():
             loss.backward()
             self.optimizer.step()
         
-        if self.epsilon > self.epsilon_min:
+        if self.epsilon > self.epsilon_min and update_e:
             self.epsilon = scheduler.value(t)
 
 def createAgents(cfg):
