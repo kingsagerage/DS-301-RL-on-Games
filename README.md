@@ -77,9 +77,9 @@ tactical gaming applications
 
 ## Authors
 
-* Sage Harley [snh362@nyu.edu](snh362@nyu.edu)
-* William Huang [xw2559@nyu.edu](xw2559@nyu.edu)
-* Charles Zhang [sz3583@nyu.edu](sz3583@nyu.edu)
+* Sage Harley [snh362@nyu.edu](https://github.com/kingsagerage)
+* William Huang [xw2559@nyu.edu](https://github.com/wang3ng)
+* Charles Zhang [sz3583@nyu.edu](https://github.com/1295212083)
 
 ## Reference
 * [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/pdf/1312.5602)
