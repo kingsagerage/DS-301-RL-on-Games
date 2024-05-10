@@ -54,7 +54,7 @@ The loss plot can be used to inspect how well the model is approximating the tar
 ###Demonstrations:
 
 
-https://github.com/kingsagerage/DS-301-RL-on-Games/notebooks/Output/environment_video.mp4
+https://github.com/kingsagerage/DS-301-RL-on-Games/blob/main/notebooks/Output/environment_video.mp4
 
 
 
