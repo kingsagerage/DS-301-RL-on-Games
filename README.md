@@ -31,7 +31,6 @@ This Project has 2 main parts:
 * Run `train/train.py` to start training
 
 
-
 ## Model Information
 
 ### Architecture
@@ -52,6 +51,9 @@ We collected the data manually by modifying the `train/train.py` to compute rewa
 The loss plot can be used to inspect how well the model is approximating the target Q-value
 ![loss](loss.png)
 
+###Demonstrations:
+https://github.com/kingsagerage/DS-301-RL-on-Games/assets/56563071/9c9971ff-829b-4091-9b66-54678e1fcd01
+
 ## Conclusion
 Training intelligent agents for tactical shooting simulations proved both challenging and
 insightful. We constructed a rich 3D environment and successfully implemented a Deep
@@ -62,6 +64,10 @@ behavior, model convergence, and the impact of training settings. These were tru
 both the 2D and 3D settings. Changing different hyper-parameters, starting positions,
 and adding memory and replay drastically affected the outcome.\
 \
+
+
+
+
 However, there are several limitations. Convergence times and model performance are
 highly dependent on starting positions in each epoch, highlighting the sensitivity of
 training outcomes to initial conditions. Additionally, while agents excelled at eliminating
