@@ -51,11 +51,10 @@ We collected the data manually by modifying the `train/train.py` to compute rewa
 The loss plot can be used to inspect how well the model is approximating the target Q-value
 ![loss](loss.png)
 
-###Demonstrations:
+### Demonstrations:
 
 
 https://github.com/kingsagerage/DS-301-RL-on-Games/blob/main/notebooks/Output/environment_video.mp4
-
 
 
 
@@ -68,9 +67,6 @@ agent to do the right action. Our analysis identified key factors influencing ag
 behavior, model convergence, and the impact of training settings. These were true in
 both the 2D and 3D settings. Changing different hyper-parameters, starting positions,
 and adding memory and replay drastically affected the outcome.\
-\
-
-
 
 
 However, there are several limitations. Convergence times and model performance are
@@ -78,7 +74,7 @@ highly dependent on starting positions in each epoch, highlighting the sensitivi
 training outcomes to initial conditions. Additionally, while agents excelled at eliminating
 nearby targets, they occasionally fixated on these objectives, neglecting long-term
 strategic goals.\
-\
+
 Addressing these limitations is crucial for future development. Exploring alternative
 reward structures that incentives strategic decision-making and investigating methods for
 enhanced training stability across diverse environments are further research directions.
